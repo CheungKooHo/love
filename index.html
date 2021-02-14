@@ -45,7 +45,7 @@
   </head>
 
   <body>
-    <audio autoplay="autopaly" loop="loop">
+    <audio id="audio" autoplay="autopaly" loop="loop">
       <source src="renxi.mp3" type="audio/mp3" />
     </audio>
     <div id="main">
@@ -179,6 +179,14 @@
     </div>
     <script>
       (function () {
+        // 播放音乐
+        let audio = document.querySelector('audio');
+        console.log(audio);
+        // audio.play();
+        // let timer = setTimeout(() => {
+        //   audio.play();
+        // }, 10);
+
         let flag = '';
         // 1、判断是否为PC端
         function IsPC() {
@@ -321,6 +329,9 @@
         var hold = 1;
         canvas
           .click(function (e) {
+            // 点击之后播放音乐
+            audio.play();
+
             var offset = canvas.offset(),
               x,
               y;
